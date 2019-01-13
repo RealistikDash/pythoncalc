@@ -1,7 +1,6 @@
-#Calculator by RealStudios
-#www.him8gr8k.ueuo.com
-#Written in Python 3.5.2
-#For more helpcontact us on github https://github.com/RealPlayerCraft/pythoncalc
+#Calculator by RealistikDash and historis
+#Written in Python 3.6.7
+#For more help contact us on github https://github.com/RealistikDash/pythoncalc
 #Feel free to fork
 import math
 
@@ -10,10 +9,16 @@ class Expression(object):
         raise NotImplementedError("Please implement this method")
 
     def printme(self):
-        print(self.eval());
+        try:
+            print(self.eval());
+        except Exception:
+            print(self.eval)
 
     def readFloat(self, message):
-        return float(raw_input(message))
+        try:
+            return float(raw_input(message))
+        except Exception:
+            return float(input(message))
 
 class OneArgExpression(Expression):
     def readArguments(self):
@@ -88,7 +93,10 @@ class HelpExpression(Expression):
         return "help"
 
 def readOperation(operators):
-    return raw_input('Choose an operator.(' + operators + '): ')
+    try:
+        return raw_input('Choose an operator.(' + operators + '): ')
+    except Exception:
+        return input('Choose an operator.(' + operators + '): ')
 
 #Function that does all the job
 def main():
@@ -117,8 +125,8 @@ def main():
 
     print('Thank you for using this calculator')
 
-creators = 'Made by Real and historis'
-ver = 'Version: Open Alpha 0.4.0'
+creators = 'Made by RealistikDash and historis'
+ver = 'Version: Open Alpha 0.4.1'
 print(creators)
 print(ver)
 main()
