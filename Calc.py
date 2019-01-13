@@ -9,10 +9,7 @@ class Expression(object):
         raise NotImplementedError("Please implement this method")
 
     def printme(self):
-        try:
-            print(self.eval());
-        except Exception:
-            print(self.eval)
+        print(self.eval)
 
     def readFloat(self, message):
         try:
